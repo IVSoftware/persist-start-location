@@ -28,12 +28,11 @@ namespace persist_start_location
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            if(Properties.Settings.Default.Size.Equals(new Size()))
+            if (!Properties.Settings.Default.Size.Equals(new Size()))
             {
-                saveSizeAndPosition(this, EventArgs.Empty);
+                Location = Properties.Settings.Default.Location;
+                Size = Properties.Settings.Default.Size;
             }
-            Location = Properties.Settings.Default.Location;
-            Size = Properties.Settings.Default.Size;
         }
     }
 }
