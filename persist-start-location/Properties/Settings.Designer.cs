@@ -25,10 +25,10 @@ namespace persist_start_location.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Size {
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Size Size {
             get {
-                return ((string)(this["Size"]));
+                return ((global::System.Drawing.Size)(this["Size"]));
             }
             set {
                 this["Size"] = value;
@@ -37,10 +37,10 @@ namespace persist_start_location.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Location {
+        [global::System.Configuration.DefaultSettingValueAttribute("0, 0")]
+        public global::System.Drawing.Point Location {
             get {
-                return ((string)(this["Location"]));
+                return ((global::System.Drawing.Point)(this["Location"]));
             }
             set {
                 this["Location"] = value;

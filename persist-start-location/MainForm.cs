@@ -1,11 +1,6 @@
-﻿using Newtonsoft.Json;
+﻿
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -21,9 +16,8 @@ namespace persist_start_location
 
         private async void saveSizeAndPosition(object sender, EventArgs e)
         {
-            Properties.Settings.Default.Location = JsonConvert.SerializeObject(Location);
-            Properties.Settings.Default.Save();
-            Properties.Settings.Default.Size = JsonConvert.SerializeObject(Size);
+            Properties.Settings.Default.Location = Location;
+            Properties.Settings.Default.Size =Size;
             Properties.Settings.Default.Save();
             var textB4 = Text;
             Text = $"Location = {Location} Size = {Size}";
@@ -34,12 +28,12 @@ namespace persist_start_location
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            if(string.IsNullOrWhiteSpace(Properties.Settings.Default.Location))
+            if(Properties.Settings.Default.Size.Equals(new Size()))
             {
                 saveSizeAndPosition(this, EventArgs.Empty);
             }
-            Location = JsonConvert.DeserializeObject<Point>(Properties.Settings.Default.Location);
-            Size = JsonConvert.DeserializeObject<Size>(Properties.Settings.Default.Size);
+            Location = Properties.Settings.Default.Location;
+            Size = Properties.Settings.Default.Size;
         }
     }
 }
